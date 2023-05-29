@@ -1,4 +1,4 @@
-# ASPNET_CORE_MVC_CRUD
+# ASP.NET CORE 7.0 MVC CRUD
 
 
 Required packages for database installation;
