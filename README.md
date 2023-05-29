@@ -1,7 +1,7 @@
 # ASPNET_CORE_MVC_CRUD
 
 
-Veritabaný kurulumu için gerekli paketler;
+Required packages for database installation;
 
 * Microsoft.EntityFrameworkCore.SqlServer
 * Microsoft.EntityFrameworkCore.Tools
@@ -11,13 +11,14 @@ Connection string;
 
 * Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;TrustServerCertificate =true;
 
-Migration kodlarý;
+ Migration codes;
 
 * Add-Migration "Initial Migration"
 * Update-Database
 
 
 
-# Kaynaklar
+# Resources
 
 1. [Sameer Saini](https://www.youtube.com/@SameerSaini)
+2. [Patrick God](https://www.youtube.com/@PatrickGod)
