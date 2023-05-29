@@ -1,0 +1,33 @@
+﻿@model ASPNET_CORE_MVC_CRUD.Models.CustomerModel.DeleteCustomerViewModel
+
+
+<h1>Delete Customer</h1>
+
+<form asp-action="Delete" asp-controller="Customers" method="post" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly="readonly">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name" readonly="readonly">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email Address</label>
+        <input type="email" class="form-control" asp-for="Email" readonly="readonly">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Phone</label>
+        <input type="text" class="form-control" asp-for="Phone" readonly="readonly">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Address</label>
+        <input type="text" class="form-control" asp-for="Address" readonly="readonly">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Date Of Birth</label>
+        <input type="date" class="form-control" asp-for="DateOfBirth" readonly="readonly">
+    </div>
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

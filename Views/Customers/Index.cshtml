@@ -1,0 +1,107 @@
+﻿@model List<ASPNET_CORE_MVC_CRUD.Models.CustomerModel.Customer>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section search{
+    <form class="d-flex" method="post" asp-controller="Home" asp-action="Index">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="value">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+}
+
+
+<table class="table table-dark table-striped" style="margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Adress</th>
+            <th>Date Of Birth</th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var customer in @Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+                <td>@customer.Phone</td>
+                <td>@customer.Address</td>
+                <td>@customer.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                <td><a class="btn btn-success" href="Home/Update/@customer.Id" role="button">Update</a></td>
+                <td><a class="btn btn-danger" href="Home/Delete/@customer.Id" role="button">Delete</a></td>
+                <td><a class="btn btn-primary" href="Home/Add" role="button">Add</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<div id="cards_landscape_wrap-2">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var customer in @Model)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://picsum.photos/200" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>@customer.Name</h6>
+                                    <p class="card-text">@customer.Email</p>
+                                    <p class="card-text">@customer.Phone</p>
+                                    <p class="card-text">@customer.Address</p>
+                                    <p class="card-text">@customer.DateOfBirth.ToString("dd-MM-yyyy")</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*
+    isim listesinin başka bir görünümü
+
+<div class="row row-cols-2 row-cols-md-4 g-4">
+
+    @foreach (var customer in @Model)
+    {
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://picsum.photos/200" class="card-img-top" alt="random picture" width="100%" height="100">
+                <div class="card-body">
+                    <h5 class="card-title">@customer.Name</h5>
+                    <p class="card-text">@customer.Email</p>
+                    <p class="card-text">@customer.Phone</p>
+                    <p class="card-text">@customer.Address</p>
+                    <p class="card-text">@customer.DateOfBirth.ToString("dd-MM-yyyy")</p>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+*@
