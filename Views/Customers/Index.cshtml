@@ -1,10 +1,10 @@
 ﻿@model List<ASPNET_CORE_MVC_CRUD.Models.CustomerModel.Customer>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Customer Page";
 }
 
 @section search{
-    <form class="d-flex" method="post" asp-controller="Home" asp-action="Index">
+    <form class="d-flex" method="post" asp-controller="Customers" asp-action="Index">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="value">
         <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
@@ -21,8 +21,7 @@
             <th>Adress</th>
             <th>Date Of Birth</th>
             <th></th>
-            <th></th>
-            <th></th>
+            <th><a class="btn btn-success" asp-controller="Customers" asp-action="Add" role="button">Add</a></th>
 
         </tr>
     </thead>
@@ -37,9 +36,8 @@
                 <td>@customer.Phone</td>
                 <td>@customer.Address</td>
                 <td>@customer.DateOfBirth.ToString("dd-MM-yyyy")</td>
-                <td><a class="btn btn-success" href="Home/Update/@customer.Id" role="button">Update</a></td>
-                <td><a class="btn btn-danger" href="Home/Delete/@customer.Id" role="button">Delete</a></td>
-                <td><a class="btn btn-primary" href="Home/Add" role="button">Add</a></td>
+                <td><a class="btn btn-primary" asp-controller="Customers" asp-action="Update" asp-route-id="@customer.Id" role="button">Update</a></td>
+                <td><a class="btn btn-danger" href="Customers/Delete/@customer.Id" role="button">Delete</a></td>
             </tr>
         }
     </tbody>

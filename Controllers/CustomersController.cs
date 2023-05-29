@@ -34,8 +34,7 @@ namespace ASPNET_CORE_MVC_CRUD.Controllers
             return View(customers);
         }
 
-
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
             return View();
         }
