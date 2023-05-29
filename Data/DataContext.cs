@@ -12,12 +12,6 @@ namespace ASPNET_CORE_MVC_CRUD.Data
         {
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    base.OnConfiguring(optionsBuilder);
-        //    optionsBuilder.UseSqlServer("Server=AHMET-PC;Database=MvcCoreDemoDb;Trusted_Connection=True;TrustServerCertificate =true;");
-        //}
-
         public DbSet<Product> Products { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Customer> Customers { get; set; }
