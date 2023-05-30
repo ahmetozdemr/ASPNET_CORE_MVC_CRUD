@@ -3,6 +3,11 @@
     ViewData["Title"] = "Customer Page";
 }
 
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/card.css" asp-append-version="true" />
+}
+
 @section search{
     <form class="d-flex" method="post" asp-controller="Customers" asp-action="Index">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="value">
@@ -73,33 +78,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-@*
-    isim listesinin başka bir görünümü
-
-<div class="row row-cols-2 row-cols-md-4 g-4">
-
-    @foreach (var customer in @Model)
-    {
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://picsum.photos/200" class="card-img-top" alt="random picture" width="100%" height="100">
-                <div class="card-body">
-                    <h5 class="card-title">@customer.Name</h5>
-                    <p class="card-text">@customer.Email</p>
-                    <p class="card-text">@customer.Phone</p>
-                    <p class="card-text">@customer.Address</p>
-                    <p class="card-text">@customer.DateOfBirth.ToString("dd-MM-yyyy")</p>
-                </div>
-            </div>
-        </div>
-    }
-
-</div>
-*@
