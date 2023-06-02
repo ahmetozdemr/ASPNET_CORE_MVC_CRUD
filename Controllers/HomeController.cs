@@ -1,21 +1,25 @@
-﻿using ASPNET_CORE_MVC_CRUD.Models;
+﻿using ASPNET_CORE_MVC_CRUD.Data;
+using ASPNET_CORE_MVC_CRUD.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ASPNET_CORE_MVC_CRUD.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DataContext _dataContext;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, DataContext dataContext)
         {
+            _dataContext = dataContext;
             _logger = logger;
         }
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var customers = await _dataContext.Customers.ToListAsync();
+            return View(customers);
         }
 
         public IActionResult Privacy()

@@ -1,0 +1,34 @@
+﻿<header>
+    <nav class="navbar navbar-expand-lg containernav" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="https://www.shareicon.net/data/128x128/2017/07/13/888376_office_512x512.png" alt="Bootstrap" width="40" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Customers" asp-action="Index">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employees" asp-action="Index">Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Product</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex" method="post" asp-controller="@ViewBag.CntrllrActn[0]" asp-action="@ViewBag.CntrllrActn[1]">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="value">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+</header>

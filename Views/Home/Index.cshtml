@@ -1,10 +1,19 @@
-﻿@{
+﻿@model List<Customer>
+@{
     ViewData["Title"] = "Home Page";
+    string[] CntrllrActn = { "Customers", "Index" };
+    ViewBag.CntrllrActn = CntrllrActn;
+}
+@section Styles
+    {
+    <link rel="stylesheet" href="~/css/card.css" asp-append-version="true" />
 }
 
-<div style="margin-top:20px">
-    <a class="btn btn-primary" asp-controller="Customers" asp-action="Index" role="button">Customer</a>
-    <a class="btn btn-primary" asp-controller="Employees" asp-action="Index" role="button">Employee</a>
-    <a class="btn btn-primary" asp-controller="Products" asp-action="Index" role="button">Product</a>
-</div>
+<partial name="~/Views/Customers/Partials/_TablePartialView.cshtml" />
+
+<partial name="~/Views/Customers/Partials/_CardPartialView.cshtml" />
+
+
+
+
 

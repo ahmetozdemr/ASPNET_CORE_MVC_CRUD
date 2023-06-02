@@ -1,0 +1,31 @@
+﻿<table class="table table-dark table-striped" style="margin-top: 10px;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Adress</th>
+            <th>Date Of Birth</th>
+            <th></th>
+            <th><a class="btn btn-success" asp-controller="Customers" asp-action="Add" role="button">Add</a></th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var customer in @Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+                <td>@customer.Phone</td>
+                <td>@customer.Address</td>
+                <td>@customer.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                <td><a class="btn btn-primary" asp-controller="Customers" asp-action="Update" asp-route-id="@customer.Id" role="button">Update</a></td>
+                <td><a class="btn btn-danger" href="Customers/Delete/@customer.Id" role="button">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

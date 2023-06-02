@@ -1,0 +1,30 @@
+﻿@model List<ASPNET_CORE_MVC_CRUD.Models.CustomerModel.Customer>
+
+<div id="cards_landscape_wrap-2">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var customer in @Model)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://picsum.photos/200" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>@customer.Name</h6>
+                                    <p class="card-text">@customer.Email</p>
+                                    <p class="card-text">@customer.Phone</p>
+                                    <p class="card-text">@customer.Address</p>
+                                    <p class="card-text">@customer.DateOfBirth.ToString("dd-MM-yyyy")</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

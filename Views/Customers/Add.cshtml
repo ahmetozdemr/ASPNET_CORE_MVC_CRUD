@@ -1,5 +1,9 @@
-﻿@model ASPNET_CORE_MVC_CRUD.Models.CustomerModel.AddCutomerViewModel
+﻿@model AddCutomerViewModel
 
+@{
+    string[] CntrllrActn = { "Customers", "Index" };
+    ViewBag.CntrllrActn = CntrllrActn;
+}
 
 <h1>Add Customer</h1>
 

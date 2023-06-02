@@ -1,5 +1,8 @@
-﻿@model ASPNET_CORE_MVC_CRUD.Models.CustomerModel.DeleteCustomerViewModel
-
+﻿@model DeleteCustomerViewModel
+@{
+    string[] CntrllrActn = { "Customers", "Index" };
+    ViewBag.CntrllrActn = CntrllrActn;
+}
 
 <h1>Delete Customer</h1>
 
