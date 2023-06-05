@@ -15,6 +15,8 @@ Connection string;
 
 * Add-Migration "Initial Migration"
 * Update-Database
+* Remove-Migration
+* Remove-Migration -Force
 
 
 
